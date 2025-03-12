@@ -2,6 +2,13 @@
 import { useRef, useEffect, useState } from 'react';
 import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 
+// Declare the window interface extension for TypeScript
+declare global {
+  interface Window {
+    initMap: () => void;
+  }
+}
+
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const mapRef = useRef<HTMLDivElement>(null);
@@ -41,7 +48,10 @@ const Contact = () => {
       window.initMap = () => {
         if (mapRef.current) {
           // Center coordinates (replace with your salon's actual location)
-          const location = { lat: 51.509865, lng: -0.118092 };
+          const location: google.maps.LatLngLiteral = { 
+            lat: 51.509865, 
+            lng: -0.118092 
+          };
           
           const map = new google.maps.Map(mapRef.current, {
             zoom: 15,
@@ -126,7 +136,7 @@ const Contact = () => {
           });
           
           // Add marker
-          const marker = new google.maps.Marker({
+          new google.maps.Marker({
             position: location,
             map: map,
             title: "RetroGlow Waxing Salon"
