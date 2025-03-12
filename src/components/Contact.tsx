@@ -18,7 +18,7 @@ const Contact = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.add('opacity-100');
         }
       },
       { threshold: 0.1 }
