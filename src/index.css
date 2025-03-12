@@ -1,84 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 35 60% 98%;
+    --foreground: 20 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 332 40% 90%;
+    --primary-foreground: 332 80% 30%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 142 20% 85%;
+    --secondary-foreground: 142 50% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 20% 90%;
+    --muted-foreground: 20 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 80% 80%;
+    --accent-foreground: 45 50% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 20 10% 85%;
+    --input: 20 10% 90%;
+    --ring: 332 40% 70%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 20 10% 10%;
+    --foreground: 35 20% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 10% 15%;
+    --card-foreground: 35 20% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 10% 15%;
+    --popover-foreground: 35 20% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 332 30% 40%;
+    --primary-foreground: 332 30% 90%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 142 20% 30%;
+    --secondary-foreground: 142 20% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 20 10% 20%;
+    --muted-foreground: 35 10% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 50% 40%;
+    --accent-foreground: 45 50% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 20 10% 25%;
+    --input: 20 10% 20%;
+    --ring: 332 40% 40%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,6 +93,75 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-montserrat;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+  
+  .vintage-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .vintage-section {
+    @apply py-16 md:py-24;
+  }
+  
+  .vintage-card {
+    @apply bg-white/70 backdrop-blur-sm border border-vintage-cream/30 rounded-lg shadow-md transition-all duration-300;
+  }
+  
+  .vintage-button {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .primary-button {
+    @apply vintage-button bg-vintage-pink text-vintage-gold border border-vintage-gold/30 hover:bg-vintage-gold/10;
+  }
+  
+  .secondary-button {
+    @apply vintage-button bg-vintage-mint text-primary-foreground border border-vintage-gold/30 hover:bg-vintage-gold/10;
+  }
+  
+  .section-title {
+    @apply inline-block relative;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute left-1/4 right-1/4 bottom-0 h-[2px] bg-vintage-gold;
+  }
+  
+  .vintage-divider {
+    @apply flex items-center justify-center my-8;
+  }
+  
+  .vintage-divider::before,
+  .vintage-divider::after {
+    @apply content-[''] flex-1 h-[1px] bg-vintage-gold/30;
+  }
+  
+  .vintage-divider::before {
+    @apply mr-3;
+  }
+  
+  .vintage-divider::after {
+    @apply ml-3;
   }
 }
