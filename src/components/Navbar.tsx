@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed w-full z-50 transition-all duration-300",
+        "fixed w-full z-50 transition-all duration-300 fifties-boomerang",
         isScrolled 
           ? "py-2 bg-white/90 backdrop-blur-md shadow-md" 
           : "py-4 bg-transparent"
@@ -34,13 +34,13 @@ const Navbar = () => {
             href="#" 
             className="flex items-center"
           >
-            <span className="font-dancing text-3xl md:text-4xl text-vintage-gold">
+            <span className="font-dancing text-3xl md:text-4xl text-vintage-gold fifties-heading">
               RetroGlow
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {[
               { name: "Home", href: "#home" },
               { name: "About", href: "#about" },
@@ -57,6 +57,9 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            <a href="#contact" className="fifties-button transform hover:scale-105 text-sm">
+              Book Now
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,7 +74,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in fifties-pattern">
             <div className="flex flex-col space-y-4">
               {[
                 { name: "Home", href: "#home" },
@@ -90,6 +93,13 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
+              <a 
+                href="#contact" 
+                className="block fifties-button text-center mx-4"
+                onClick={toggleMenu}
+              >
+                Book Now
+              </a>
             </div>
           </div>
         )}

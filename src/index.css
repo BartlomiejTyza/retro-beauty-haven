@@ -94,6 +94,7 @@
 
   body {
     @apply bg-background text-foreground font-montserrat;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -126,18 +127,23 @@
   
   .vintage-card {
     @apply bg-white/70 backdrop-blur-sm border border-vintage-cream/30 rounded-lg shadow-md transition-all duration-300;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.05);
   }
   
   .vintage-button {
     @apply px-6 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    border-radius: 30px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
   }
   
   .primary-button {
     @apply vintage-button bg-vintage-pink text-vintage-gold border border-vintage-gold/30 hover:bg-vintage-gold/10;
+    background: linear-gradient(135deg, #F8D0D2 0%, #f9c1c3 100%);
   }
   
   .secondary-button {
     @apply vintage-button bg-vintage-mint text-primary-foreground border border-vintage-gold/30 hover:bg-vintage-gold/10;
+    background: linear-gradient(135deg, #C8E4D6 0%, #b8d6c6 100%);
   }
   
   .section-title {
@@ -205,4 +211,163 @@
     content: '✦';
     @apply text-vintage-gold opacity-70 mx-2;
   }
+
+  /* Enhanced 50s styles */
+  .fifties-pattern {
+    background-color: #fff9e5;
+    background-image: 
+      linear-gradient(45deg, #fbf6e3 25%, transparent 25%),
+      linear-gradient(-45deg, #fbf6e3 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #fbf6e3 75%),
+      linear-gradient(-45deg, transparent 75%, #fbf6e3 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+
+  .fifties-atomic {
+    background-color: #f8f4e8;
+    background-image: radial-gradient(#d4af37 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .fifties-boomerang {
+    position: relative;
+  }
+
+  .fifties-boomerang::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='10' viewBox='0 0 60 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 10 Q 15 -5 30 10 Q 45 -5 60 10' stroke='%23d4af37' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    opacity: 0.3;
+  }
+
+  .fifties-boomerang::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='10' viewBox='0 0 60 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 0 Q 15 15 30 0 Q 45 15 60 0' stroke='%23d4af37' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    opacity: 0.3;
+  }
+
+  .fifties-starburst {
+    position: relative;
+  }
+
+  .fifties-starburst::before {
+    content: "★";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #d4af37;
+    opacity: 0.2;
+  }
+
+  .fifties-starburst::after {
+    content: "★";
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #d4af37;
+    opacity: 0.2;
+  }
+
+  .fifties-card {
+    @apply bg-white border rounded-lg transition-all duration-300 p-6 relative;
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.05);
+    border: 2px solid #d4af37;
+    border-style: dashed;
+    background-color: #fbf6e3;
+  }
+
+  .fifties-button {
+    @apply px-6 py-3 font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #d4af37 0%, #e5c467 100%);
+    color: #fff;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+  }
+
+  .fifties-pastel-bg {
+    background: linear-gradient(135deg, #f8d0d2 0%, #c8e4d6 100%);
+  }
+
+  .fifties-diner {
+    background-color: #fff;
+    background-image: 
+      linear-gradient(90deg, rgba(212, 175, 55, 0.1) 50%, transparent 50%),
+      linear-gradient(rgba(212, 175, 55, 0.1) 50%, transparent 50%);
+    background-size: 20px 20px;
+  }
+
+  .fifties-divider {
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='10' viewBox='0 0 120 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 5 Q 30 0, 60 5 T 120 5' stroke='%23d4af37' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    margin: 2rem 0;
+    opacity: 0.6;
+  }
+
+  .fifties-decor {
+    @apply relative;
+  }
+  
+  .fifties-decor::before {
+    content: "✧";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: #d4af37;
+    opacity: 0.6;
+  }
+  
+  .fifties-decor::after {
+    content: "✧";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    color: #d4af37;
+    opacity: 0.6;
+  }
+  
+  .fifties-heading {
+    @apply relative inline-block font-bold;
+    color: #d4af37;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .fifties-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .fifties-shadow {
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .fifties-vintage-border {
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #d4af37, #e5c467, #d4af37);
+  }
 }
+
